@@ -8,6 +8,7 @@ target_include_directories(
   PUBLIC $<BUILD_INTERFACE:${mpack_SOURCE_DIR}/include>
 		 $<INSTALL_INTERFACE:include>)
 
+target_compile_definitions(mpack PRIVATE $<$<CONFIG:DEBUG>:DEBUG>)
 if(MSVC)
   target_compile_options(mpack PRIVATE $<$<CONFIG:RELEASE>:/Ox> /W4)
 else()
